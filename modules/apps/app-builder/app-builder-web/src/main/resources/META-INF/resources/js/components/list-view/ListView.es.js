@@ -19,6 +19,7 @@ import SearchSubnavigationBar from '../management-toolbar/search/SearchSubnaviga
 import SearchContainer from '../search-container/SearchContainer.es';
 import {reducer, SearchContext} from '../search-container/SearchContext.es';
 import {getURL} from '../../utils/client.es';
+import TestManagementToolbar from '../test-toolbar/TestManagementToolbar.es';
 
 export default ({
 	actions,
@@ -83,6 +84,8 @@ export default ({
 
 	return (
 		<SearchContext.Provider value={{dispatch, state}}>
+			<TestManagementToolbar totalCount={totalCount} />
+
 			<ManagementToolbar>
 				<SearchBar columns={columns} totalCount={totalCount} />
 
